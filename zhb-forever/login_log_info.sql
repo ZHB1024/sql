@@ -16,37 +16,31 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user_info`
+-- Table structure for table `login_log_info`
 --
 
-DROP TABLE IF EXISTS `user_info`;
+DROP TABLE IF EXISTS `login_log_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_info` (
+CREATE TABLE `login_log_info` (
   `ID` varchar(16) NOT NULL,
-  `NAME` varchar(50) NOT NULL,
-  `ROLE_ID` varchar(16) NOT NULL,
-  `REAL_NAME` varchar(20) DEFAULT NULL,
-  `SEX` varchar(2) DEFAULT NULL,
-  `PHONE` varchar(11) DEFAULT NULL,
-  `EMAIL` varchar(50) DEFAULT NULL,
+  `USER_NAME` varchar(50) NOT NULL,
+  `CLIENT_IP` varchar(20) NOT NULL,
+  `LOGIN_IN` int(1) NOT NULL,
   `CREATE_TIME` datetime NOT NULL,
-  `UPDATE_TIME` datetime DEFAULT NULL,
-  `DELETE_FLAG` int(1) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `ROLE_ID` (`ROLE_ID`),
-  CONSTRAINT `user_info_ibfk_1` FOREIGN KEY (`ROLE_ID`) REFERENCES `role_info` (`ID`)
+  'BROWSER_NAME' varchar(20) NOT NULL,
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user_info`
+-- Dumping data for table `login_log_info`
 --
 
-LOCK TABLES `user_info` WRITE;
-/*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES ('rwkwd44ljz440mtu','root','p8jsp46hxikrl97o','张会彬','男','18222706003','zhb20111503@126.com','2017-11-08 21:28:23','2017-11-28 09:26:42',0);
-/*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
+LOCK TABLES `login_log_info` WRITE;
+/*!40000 ALTER TABLE `login_log_info` DISABLE KEYS */;
+
+/*!40000 ALTER TABLE `login_log_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -58,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-06 13:38:16
+-- Dump completed on 2018-02-06 13:36:21

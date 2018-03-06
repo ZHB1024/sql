@@ -16,37 +16,29 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `user_info`
+-- Table structure for table `news_info`
 --
 
-DROP TABLE IF EXISTS `user_info`;
+DROP TABLE IF EXISTS `news_info`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `user_info` (
+CREATE TABLE `news_info` (
   `ID` varchar(16) NOT NULL,
-  `NAME` varchar(50) NOT NULL,
-  `ROLE_ID` varchar(16) NOT NULL,
-  `REAL_NAME` varchar(20) DEFAULT NULL,
-  `SEX` varchar(2) DEFAULT NULL,
-  `PHONE` varchar(11) DEFAULT NULL,
-  `EMAIL` varchar(50) DEFAULT NULL,
+  `TITLE` varchar(1000) NOT NULL,
+  `CONTENT` varchar(1000) NOT NULL,
   `CREATE_TIME` datetime NOT NULL,
-  `UPDATE_TIME` datetime DEFAULT NULL,
-  `DELETE_FLAG` int(1) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `ROLE_ID` (`ROLE_ID`),
-  CONSTRAINT `user_info_ibfk_1` FOREIGN KEY (`ROLE_ID`) REFERENCES `role_info` (`ID`)
+  PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `user_info`
+-- Dumping data for table `news_info`
 --
 
-LOCK TABLES `user_info` WRITE;
-/*!40000 ALTER TABLE `user_info` DISABLE KEYS */;
-INSERT INTO `user_info` VALUES ('rwkwd44ljz440mtu','root','p8jsp46hxikrl97o','张会彬','男','18222706003','zhb20111503@126.com','2017-11-08 21:28:23','2017-11-28 09:26:42',0);
-/*!40000 ALTER TABLE `user_info` ENABLE KEYS */;
+LOCK TABLES `news_info` WRITE;
+/*!40000 ALTER TABLE `news_info` DISABLE KEYS */;
+INSERT INTO `news_info` VALUES ('10493184','大庆石油学院关于图像校对的事宜','大庆石油学院关于图像校对的事宜','2008-11-21 15:25:30'),('10493542','学年注册统计表','学年注册统计表','2008-11-11 21:02:32');
+/*!40000 ALTER TABLE `news_info` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -58,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-02-06 13:38:16
+-- Dump completed on 2018-02-06 13:37:43
