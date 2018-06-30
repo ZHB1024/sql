@@ -28,7 +28,7 @@ CREATE TABLE `login_log_info` (
   `CLIENT_IP` varchar(20) NOT NULL,
   `LOGIN_IN` int(1) NOT NULL,
   `CREATE_TIME` datetime NOT NULL,
-  'BROWSER_NAME' varchar(20) NOT NULL,
+  `BROWSER_NAME` varchar(20) NOT NULL,
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
